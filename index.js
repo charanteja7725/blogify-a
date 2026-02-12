@@ -6,12 +6,13 @@ app.use(express.json());
 
 // Import posts router
 const postsRouter = require("./src/routes/posts.routes.js");
+const router = require("./src/routes/posts.routes.js");
 
 // Mount router
-app.use("/api/v1/posts", postsRouter);
+router.use("/api/v1/posts", postsRouter);
 
 // Root route (optional)
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.send("Blogify API Running...");
 });
 
